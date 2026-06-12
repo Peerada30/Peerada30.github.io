@@ -1,149 +1,111 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-
-    /* พื้นหลังแดง-ดำ */
-    background: linear-gradient(
-        -45deg,
-        #000000,
-        #1a0000,
-        #8b0000,
-        #ff0000
-    );
-    background-size: 400% 400%;
-    animation: redBlackBG 10s ease infinite;
-
-    color: #f5f5f5;
+font-family: Arial, sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+/* ไล่เฉดสีแดง-ดำ: ดำสนิทอวกาศ, แดงเลือดนกเข้ม, แดงทับทิม, ดำถ่าน */
+background: linear-gradient(-45deg, #050000, #1a0003, #4a0008, #0f0f14);
+background-size: 400% 400%;
+animation: bgMove 10s ease infinite;
+color: #f5f5f5; /* ตัวอักษรสีขาวนวล อ่านง่ายบนพื้นหลังมืด */
 }
 
 /* พื้นหลังเคลื่อนไหว */
-@keyframes redBlackBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes bgMove {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
 }
 
-/* Header แดง-ดำ */
 header {
-    background: linear-gradient(
-        90deg,
-        #000000,
-        #8b0000,
-        #ff0000,
-        #8b0000,
-        #000000
-    );
-    background-size: 400% 400%;
-    animation: redBlackBG 5s linear infinite;
-
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+/* ไล่เฉดสีดำและแดงเข้มดูลึกลับ */
+background: linear-gradient(90deg, #0d0002, #260005, #050000);
+color: #ff2a4b; /* สีแดงนีออนสว่าง */
+padding: 20px 0;
+text-align: center;
+animation: fadeDown 1s ease;
+border-bottom: 2px solid #ff0022; /* เส้นขอบเรืองแสงสีแดง */
 }
 
-/* ตัวอักษรหัวเรื่องแดงสด */
 header h1 {
-    font-size: 3rem;
-    background: linear-gradient(
-        90deg,
-        #ff0000,
-        #ff4d4d,
-        #ffffff,
-        #ff4d4d,
-        #ff0000
-    );
-    background-size: 400%;
-    animation: redText 3s linear infinite;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+margin: 0;
+text-shadow: 0 0 10px #ff0022, 0 0 20px #800010; /* เรืองแสงสีแดงเพลิง */
 }
 
-/* เอฟเฟกต์ตัวหนังสือ */
-@keyframes redText {
-    0% {
-        background-position: 0%;
-    }
-    100% {
-        background-position: 400%;
-    }
+header p {
+margin: 5px 0 0;
+color: #ff8093; /* สีแดงพาสเทล/ชมพูอมแดงอ่อน */
 }
 
-/* กล่องเนื้อหา */
 section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-
-    background: rgba(15, 15, 15, 0.9);
-    border: 2px solid #ff0000;
-    border-radius: 15px;
-
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-
-    animation: float 3s ease-in-out infinite;
-    transition: all 0.3s ease;
-
-    color: white;
-}
-
-/* ลอยขึ้นลง */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+padding: 20px;
+margin: 20px auto;
+max-width: 800px;
+/* กล่องข้อความแบบกระจกมืดโปร่งแสง โทนดำ-เทาเข้ม */
+background: rgba(15, 10, 11, 0.9);
+border: 1px solid rgba(255, 0, 34, 0.15);
+border-radius: 12px;
+/* เงารอบกล่องสีแดงเรืองแสงจาง ๆ */
+box-shadow: 0 0 20px rgba(255, 0, 34, 0.15);
+animation: fadeUp 1s ease;
+transition: all 0.3s ease;
 }
 
 section:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px rgba(255, 0, 0, 0.9);
+transform: scale(1.03);
+/* เรืองแสงสีแดงเข้มข้นขึ้นเมื่อเมาส์ชี้ */
+box-shadow: 0 0 30px rgba(255, 0, 34, 0.4);
+border: 1px solid rgba(255, 0, 34, 0.4);
 }
 
-/* หัวข้อ */
-h2,
-h3 {
-    background: linear-gradient(
-        90deg,
-        #ff0000,
-        #ffffff,
-        #ff0000
-    );
-    background-size: 400%;
-    animation: redText 3s linear infinite;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+h2 {
+color: #ff2a4b; /* หัวข้อสีแดงนีออน */
+text-shadow: 0 0 5px rgba(255, 42, 75, 0.3);
 }
 
-/* Footer */
+.project {
+margin-bottom: 20px;
+}
+
+.project h3 {
+margin: 0 0 10px;
+color: #ff526c; /* หัวข้อย่อยสีแดงสว่าง */
+}
+
+ul {
+list-style-type: square;
+padding-left: 20px;
+color: #ffccd3; /* สีลิสต์รายการเป็นสีแดงอ่อนมาก ๆ */
+}
+
 footer {
-    text-align: center;
-    padding: 15px;
+text-align: center;
+padding: 10px 0;
+background: linear-gradient(90deg, #050000, #260005, #0d0002);
+color: #ff0022;
+margin-top: 20px;
+border-top: 2px solid #ff0022;
+}
 
-    background: linear-gradient(
-        90deg,
-        #000000,
-        #8b0000,
-        #ff0000,
-        #8b0000,
-        #000000
-    );
-    background-size: 400% 400%;
-    animation: redBlackBG 5s linear infinite;
+/* Animation */
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
 
-    color: white;
+@keyframes fadeDown {
+from {
+opacity: 0;
+transform: translateY(-30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
