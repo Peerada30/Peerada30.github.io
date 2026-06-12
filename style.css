@@ -4,26 +4,22 @@ body {
     margin: 0;
     padding: 0;
 
-    /* พื้นหลังสีรุ้ง */
+    /* พื้นหลังแดง-ดำ */
     background: linear-gradient(
         -45deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        indigo,
-        violet
+        #000000,
+        #1a0000,
+        #8b0000,
+        #ff0000
     );
     background-size: 400% 400%;
-    animation: rainbowBG 10s ease infinite;
+    animation: redBlackBG 10s ease infinite;
 
-    color: #333;
+    color: #f5f5f5;
 }
 
-/* พื้นหลังสีรุ้งเคลื่อนไหว */
-@keyframes rainbowBG {
+/* พื้นหลังเคลื่อนไหว */
+@keyframes redBlackBG {
     0% {
         background-position: 0% 50%;
     }
@@ -35,48 +31,44 @@ body {
     }
 }
 
-/* Header สีรุ้ง */
+/* Header แดง-ดำ */
 header {
     background: linear-gradient(
         90deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        violet
+        #000000,
+        #8b0000,
+        #ff0000,
+        #8b0000,
+        #000000
     );
     background-size: 400% 400%;
-    animation: rainbowBG 5s linear infinite;
+    animation: redBlackBG 5s linear infinite;
 
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
-/* ตัวอักษรสีรุ้ง */
+/* ตัวอักษรหัวเรื่องแดงสด */
 header h1 {
     font-size: 3rem;
     background: linear-gradient(
         90deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        violet
+        #ff0000,
+        #ff4d4d,
+        #ffffff,
+        #ff4d4d,
+        #ff0000
     );
     background-size: 400%;
-    animation: rainbowText 3s linear infinite;
+    animation: redText 3s linear infinite;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ตัวหนังสือสีรุ้ง */
-@keyframes rainbowText {
+/* เอฟเฟกต์ตัวหนังสือ */
+@keyframes redText {
     0% {
         background-position: 0%;
     }
@@ -91,11 +83,16 @@ section {
     margin: 20px auto;
     max-width: 800px;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(15, 15, 15, 0.9);
+    border: 2px solid #ff0000;
     border-radius: 15px;
+
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
 
     animation: float 3s ease-in-out infinite;
     transition: all 0.3s ease;
+
+    color: white;
 }
 
 /* ลอยขึ้นลง */
@@ -112,46 +109,41 @@ section {
 }
 
 section:hover {
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.9);
 }
 
-/* หัวข้อสีรุ้ง */
+/* หัวข้อ */
 h2,
 h3 {
     background: linear-gradient(
         90deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        violet
+        #ff0000,
+        #ffffff,
+        #ff0000
     );
     background-size: 400%;
-    animation: rainbowText 3s linear infinite;
+    animation: redText 3s linear infinite;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Footer สีรุ้ง */
+/* Footer */
 footer {
     text-align: center;
     padding: 15px;
 
     background: linear-gradient(
         90deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        violet
+        #000000,
+        #8b0000,
+        #ff0000,
+        #8b0000,
+        #000000
     );
     background-size: 400% 400%;
-    animation: rainbowBG 5s linear infinite;
+    animation: redBlackBG 5s linear infinite;
 
     color: white;
 }
